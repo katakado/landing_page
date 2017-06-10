@@ -198,9 +198,21 @@
                     <p>Kami akan membantu Anda menemukan ide kado berkualitas yang sesuai dengan keinginan dan budget sehingga membuat memory yang berkesan. Sit back and relax, we take care of the rest.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="#contact" class="btn btn-lg btn-outline">
+                    <a id="contactButton" href="#contact" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Langsung chat dengan tim kami
                     </a>
+                    <!-- The below method uses jQuery, but that is not required -->
+                    <!-- Add event to the button's click handler -->
+                    <script type="text/javascript">
+                    $( '#contactButton' ).click(function() {
+                        fbq('track', 'ContactViaChat', {
+                        content_ids: ['gform'],
+                        content_type: 'leadgen_form',
+                        value: 0.25,
+                        currency: 'USD'
+                        });
+                    });
+                    </script>
                 </div>
             </div>
         </div>
